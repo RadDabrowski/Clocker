@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D79BBDC2B2C8531009C6459 /* ClockerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79BBDB2B2C8531009C6459 /* ClockerApp.swift */; };
-		9D79BBDE2B2C8531009C6459 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79BBDD2B2C8531009C6459 /* ContentView.swift */; };
+		9D79BBDE2B2C8531009C6459 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79BBDD2B2C8531009C6459 /* MainView.swift */; };
 		9D79BBE02B2C8532009C6459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D79BBDF2B2C8532009C6459 /* Assets.xcassets */; };
 		9D79BBE32B2C8532009C6459 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D79BBE22B2C8532009C6459 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		9D79BBD82B2C8531009C6459 /* Clocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79BBDB2B2C8531009C6459 /* ClockerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockerApp.swift; sourceTree = "<group>"; };
-		9D79BBDD2B2C8531009C6459 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D79BBDD2B2C8531009C6459 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9D79BBDF2B2C8532009C6459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D79BBE22B2C8532009C6459 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,9 +51,10 @@
 		9D79BBDA2B2C8531009C6459 /* Clocker */ = {
 			isa = PBXGroup;
 			children = (
-				9D79BBDB2B2C8531009C6459 /* ClockerApp.swift */,
-				9D79BBDD2B2C8531009C6459 /* ContentView.swift */,
-				9D79BBDF2B2C8532009C6459 /* Assets.xcassets */,
+				9D79BBEC2B2C85B4009C6459 /* Other */,
+				9D79BBEB2B2C8591009C6459 /* Views */,
+				9D79BBEA2B2C857D009C6459 /* ViewModels */,
+				9D79BBE92B2C856C009C6459 /* Models */,
 				9D79BBE12B2C8532009C6459 /* Preview Content */,
 			);
 			path = Clocker;
@@ -65,6 +66,37 @@
 				9D79BBE22B2C8532009C6459 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9D79BBE92B2C856C009C6459 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D79BBEA2B2C857D009C6459 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9D79BBEB2B2C8591009C6459 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D79BBDD2B2C8531009C6459 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D79BBEC2B2C85B4009C6459 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9D79BBDB2B2C8531009C6459 /* ClockerApp.swift */,
+				9D79BBDF2B2C8532009C6459 /* Assets.xcassets */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D79BBDE2B2C8531009C6459 /* ContentView.swift in Sources */,
+				9D79BBDE2B2C8531009C6459 /* MainView.swift in Sources */,
 				9D79BBDC2B2C8531009C6459 /* ClockerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
