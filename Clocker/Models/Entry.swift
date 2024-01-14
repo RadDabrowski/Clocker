@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Entry {
+struct Entry: Codable {
     var startTime: Date
     var endTime: Date
     var breakDurationMinutes: Int

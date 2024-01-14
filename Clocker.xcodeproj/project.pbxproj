@@ -20,6 +20,7 @@
 		9DE661CA2B4C23780079CF9F /* AdministrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE661C92B4C23780079CF9F /* AdministrationView.swift */; };
 		9DE661CC2B4C23C50079CF9F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE661CB2B4C23C50079CF9F /* SummaryView.swift */; };
 		9DED7BE72B53F4A2001F1D93 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DED7BE62B53F4A2001F1D93 /* Entry.swift */; };
+		9DED7BE92B53F664001F1D93 /* EntryViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DED7BE82B53F664001F1D93 /* EntryViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		9DE661C92B4C23780079CF9F /* AdministrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationView.swift; sourceTree = "<group>"; };
 		9DE661CB2B4C23C50079CF9F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		9DED7BE62B53F4A2001F1D93 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		9DED7BE82B53F664001F1D93 /* EntryViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		9D79BBEA2B2C857D009C6459 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9DED7BE82B53F664001F1D93 /* EntryViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				9D79BBDE2B2C8531009C6459 /* MainView.swift in Sources */,
 				9DED7BE72B53F4A2001F1D93 /* Entry.swift in Sources */,
 				9DE661CC2B4C23C50079CF9F /* SummaryView.swift in Sources */,
+				9DED7BE92B53F664001F1D93 /* EntryViewViewModel.swift in Sources */,
 				9D9763312B4DA87F004F396C /* EntryView.swift in Sources */,
 				9DE661C82B4C23600079CF9F /* MoreView.swift in Sources */,
 				9D79BBDC2B2C8531009C6459 /* ClockerApp.swift in Sources */,
