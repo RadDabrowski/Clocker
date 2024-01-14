@@ -9,20 +9,8 @@ import SwiftUI
 
 struct EntryView: View {
     @Binding var isEntryViewPresented: Bool
-    @State private var startTime = Date()
-    @State private var endTime = Date()
-    @State private var breakDurationHours = 0
-    @State private var breakDurationMinutes = 0
-    
-    @State private var hourlyRate = 0.0
-    @State private var bonus = 0.0
-    @State private var earnings = 0.0
-    
-    @State private var client = ""
-    @State private var project = ""
-    @State private var task = ""
-    
-    @State private var notes = ""
+    @StateObject var viewModel = EntryViewViewModel()
+    @State private var timeEntry = Entry()
     
     var body: some View {
         VStack {
@@ -41,6 +29,8 @@ struct EntryView: View {
                 Spacer()
                 
                 Button("Zachowaj") {
+                    viewModel.calculateEarnings()
+                    viewModel.saveTimeEntry()
                     isEntryViewPresented = false
                 }
                 .padding()
@@ -50,9 +40,9 @@ struct EntryView: View {
             
             Form {
                 Section(header: Text("Czas").foregroundColor(.white)) {
-                    DatePicker("Początek", selection: $startTime, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
-                    DatePicker("Koniec", selection: $endTime, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
-                    Picker("Przerwa", selection: $breakDurationMinutes) {
+                    DatePicker("Początek", selection: $timeEntry.startTime, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("Koniec", selection: $timeEntry.endTime, in: ...Date(), displayedComponents: [.date, .hourAndMinute])
+                    Picker("Przerwa", selection: $timeEntry.breakDurationMinutes) {
                         ForEach(0..<24 * 60, id: \.self) { minute in
                             let hours = minute / 60
                             let minutes = minute % 60
@@ -63,12 +53,23 @@ struct EntryView: View {
                     .background(Color(.systemGroupedBackground))
                 }
                 Section(header: Text("Zarobek").foregroundColor(.white)) {
-                        TextField("Stawka godzinowa (zł)", value: $hourlyRate, formatter: NumberFormatter.currency)
-                        TextField("Premia (zł)", value: $bonus, formatter: NumberFormatter.currency)
-                        Text("Zarobek: \(earnings, specifier: "%.2f") zł")
+                    TextField("Stawka godzinowa (zł)", value: $timeEntry.hourlyRate, formatter: NumberFormatter.currency)
+                    TextField("Premia (zł)", value: $timeEntry.bonus, formatter: NumberFormatter.currency)
+                    Text("Zarobek: \(timeEntry.earnings, specifier: "%.2f") zł")
                             .foregroundColor(.white)
                     }
                 .edgesIgnoringSafeArea(.bottom)
+                Section(header: Text("Szczegóły").foregroundColor(.white)) {
+                    TextField("Klient", text: $timeEntry.client)
+                    TextField("Projekt", text: $timeEntry.project)
+                    TextField("Zadanie", text: $timeEntry.task)
+                }
+
+                Section(header: Text("Notatki").foregroundColor(.white)) {
+                    TextEditor(text: $timeEntry.notes)
+                        .frame(height: 100)
+                }
+                
             }
         }
     }

@@ -19,4 +19,15 @@ class EntryViewViewModel: ObservableObject {
             UserDefaults.standard.set(encodedData, forKey: "savedTimeEntry")
         }
     }
+    func calculateEarnings() {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.hour, .minute], from: timeEntry.startTime, to: timeEntry.endTime)
+            let hoursWorked = Double(components.hour ?? 0) + Double(components.minute ?? 0) / 60.0
+
+            let baseEarnings = hoursWorked * timeEntry.hourlyRate
+
+            let totalEarnings = baseEarnings + timeEntry.bonus
+
+            timeEntry.earnings = totalEarnings
+        }
 }
